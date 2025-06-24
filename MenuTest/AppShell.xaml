@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MenuTest.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MenuTest"
+    Title="MenuTest"
+    BackgroundColor="{StaticResource Primary}"
+    FlyoutBackgroundColor="{StaticResource Primary}">
+
+    <Shell.TitleView>
+        <VerticalStackLayout Margin="{OnPlatform iOS='0,-6,0,0', Android='0,10,50,0'}" HorizontalOptions="Center">
+            <Label
+                FontFamily="OpenSansSemibold"
+                FontSize="{StaticResource DefaultFontSize}"
+                HorizontalOptions="Center"
+                Text="{x:Static local:App.AppName}" />
+            <Label
+                Margin="{OnPlatform iOS='0,-6,0,0',
+                                    Android='0,-4,0,0'}"
+                FontFamily="OpenSansSemibold"
+                FontSize="{StaticResource DefaultFontSize}"
+                HorizontalOptions="Center"
+                Text="{Binding Title}" />
+
+        </VerticalStackLayout>
+    </Shell.TitleView>
+
+    <FlyoutItem Title="Home">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+
+
+</Shell>

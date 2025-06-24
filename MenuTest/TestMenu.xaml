@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="MenuTest.TestMenu"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:app="clr-namespace:MenuTest"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Padding="1"
+    x:DataType="app:TestMenu"
+    x:TypeArguments="system:String"
+    HorizontalOptions="End"
+    VerticalOptions="Start">
+
+    <VerticalStackLayout
+        Padding="10"
+        BackgroundColor="{StaticResource Primary}"
+        Spacing="10">
+        <Button Command="{Binding ScanQRCodeCommand}" Text="Scan QR Code" />
+        <Button Command="{Binding PrintLabelsCommand}" Text="Print Labels" />
+        <Button Command="{Binding AddSaleCommand}" Text="Add/Remove Sale" />
+        <Button Command="{Binding AddItemCommand}" Text="Add Item" />
+    </VerticalStackLayout>
+</toolkit:Popup>
